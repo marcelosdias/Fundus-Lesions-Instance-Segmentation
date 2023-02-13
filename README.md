@@ -29,5 +29,14 @@ cd ../..
 ```
 ### Training
 ```
+cd model/
 python train.py --dataset ddr/idrid --epochs xx
+cd ..
 ```
+### Testing
+```
+cd model/
+python test.py --dataset ddr --type valid --iou 0.25
+cd ..
+```
+
