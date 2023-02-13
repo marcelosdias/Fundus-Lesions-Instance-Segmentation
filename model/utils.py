@@ -114,7 +114,28 @@ def initial_training_config():
         device, 
         cfg_save_path, 
         output_dir, 
-        int(args.epochs)
+        args.epochs
+    )
+
+def initial_test_config():
+    cfg_save_path = 'config.pickle'
+
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('--dataset')
+    parser.add_argument('--type')
+    parser.add_argument('--iou')
+
+    args = parser.parse_args()
+
+    test_dataset_name, test_images_path, test_json_annotations_path = get_dataset_config(args.dataset, args.type)
+
+    return (
+        test_dataset_name, 
+        test_images_path,
+        test_json_annotations_path,
+        float(args.iou), 
+        cfg_save_path,
     )
 
 def get_dataset_config(dataset, type):
@@ -132,7 +153,7 @@ def get_dataset_config(dataset, type):
         )
     else:
         raise Exception("Invalid dataset")
-
+        
 def get_train_dataset_length(dataset_path):
     length = 0
 
