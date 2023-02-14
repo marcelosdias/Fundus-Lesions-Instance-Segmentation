@@ -39,4 +39,10 @@ cd model/
 python test.py --dataset ddr --type valid --iou 0.25
 cd ..
 ```
+### Predicting
+```
+cd model/
+python predict.py --dataset ddr/idrid --type valid/test --iou 0.25 --file_name 007-2846-100.jpg
+cd ..
+```
 
