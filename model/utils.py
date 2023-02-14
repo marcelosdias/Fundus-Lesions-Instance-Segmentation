@@ -138,6 +138,31 @@ def initial_test_config():
         cfg_save_path,
     )
 
+def initial_predict_config():
+    cfg_save_path = 'config.pickle'
+
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('--dataset')
+    parser.add_argument('--file_name')
+    parser.add_argument('--type')
+    parser.add_argument('--iou')
+    
+    args = parser.parse_args()
+
+    path = f'../datasets/{args.dataset}/{args.type}/images/{args.file_name}'
+
+    test_dataset_name, test_images_path, test_json_annotations_path = get_dataset_config_predict(args.dataset, args.type)
+
+    return (
+        test_dataset_name, 
+        test_images_path,
+        test_json_annotations_path,
+        path,
+        float(args.iou),
+        cfg_save_path,
+    )
+
 def get_dataset_config(dataset, type):
     if dataset == 'ddr':
         return (
@@ -150,6 +175,22 @@ def get_dataset_config(dataset, type):
             f'{type}_dataset',
             f'../datasets/datasets-cropping-tilling/idrid/{type}',
             f'../datasets/datasets-cropping-tilling/idrid/{type}/_annotations.coco.json',
+        )
+    else:
+        raise Exception("Invalid dataset")
+
+def get_dataset_config_predict(dataset, type):
+    if dataset == 'ddr':
+        return (
+            f'{type}_dataset',
+            f'../datasets/ddr/{type}',
+            f'../datasets/ddr/{type}/_annotations.coco.json',
+        )
+    elif 'idrid':
+        return (
+            f'{type}_dataset',
+            f'../datasets/idrid/{type}',
+            f'../datasets/idrid/{type}/_annotations.coco.json',
         )
     else:
         raise Exception("Invalid dataset")
