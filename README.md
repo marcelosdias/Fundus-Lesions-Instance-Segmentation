@@ -1,4 +1,7 @@
-# Fundus-Lesions-Instance-Segmentation
+# A New Approach for Fundus Lesions Instance Segmentation
+
+![](https://github.com/marcelosdias/Fundus-Lesions-Instance-Segmentation/blob/updates/images/ezgif.com-gif-maker.gif)
+
 
 ### Installation
 ```
