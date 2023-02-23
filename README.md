@@ -17,10 +17,6 @@ git clone https://github.com/marcelosdias/Fundus-Lesions-Instance-Segmentation.g
 cd Fundus-Lesions-Instance-Segmentation/
 ```
 
-- [Download the proposed work trained with ddr](https://github.com/marcelosdias/Fundus-Lesions-Instance-Segmentation/releases/download/proposed-work-ddr/ddr.zip)
-
-- [Download the proposed work trained with idrid](https://github.com/marcelosdias/Fundus-Lesions-Instance-Segmentation/releases/download/proposed-work-idrid/idrid.zip)
-
 Anaconda installation:
 https://www.anaconda.com/products/distribution/start-coding-immediately
 
@@ -32,6 +28,14 @@ https://detectron2.readthedocs.io/en/latest/tutorials/install.html
 If you are using Windows and get this: ERROR: Invalid requirement: "'git+https://github.com/facebookresearch/detectron2.git'"
 
 You can try use this command: python -m pip install git+https://github.com/facebookresearch/detectron2.git
+
+### Download proposed work
+
+- [Download the proposed work trained with ddr](https://github.com/marcelosdias/Fundus-Lesions-Instance-Segmentation/releases/download/proposed-work-ddr/ddr.zip)
+
+- [Download the proposed work trained with idrid](https://github.com/marcelosdias/Fundus-Lesions-Instance-Segmentation/releases/download/proposed-work-idrid/idrid.zip)
+
+You need to paste and extract .zip into the model folder
 
 ### Pre-processing steps
 1. Generate Annotations
