@@ -22,6 +22,12 @@ https://www.anaconda.com/products/distribution/start-coding-immediately
 For more information about detectron2 installation: 
 https://detectron2.readthedocs.io/en/latest/tutorials/install.html
 
+### Instalation Error
+
+If you are using Windows and get this: ERROR: Invalid requirement: "'git+https://github.com/facebookresearch/detectron2.git'"
+
+You can try use this command: python -m pip install git+https://github.com/facebookresearch/detectron2.git
+
 ### Pre-processing steps
 1. Generate Annotations
 ```
@@ -54,10 +60,16 @@ python predict.py --dataset ddr/idrid --type valid/test --iou 0.25 --file_name 0
 cd ..
 ```
 
-### ✒️ Authors
+### Authors
 * **Marcelo Dias** - Computer Science, Federal University of Pelotas - UFPel, Pelotas, Brazil.
 * **Carlos Santos** - Federal Institute of Education, Science and Technology Farroupilha - IFFar, Alegrete, Brazil.
 * **Marilton Aguiar** - Postgraduate Program in Computing, Federal University of Pelotas - UFPel, Pelotas, Brazil.
 * **Daniel Welfer** - Departament of Applied Computing, Federal University of Santa Maria - UFSM, Santa Maria, Brazil.
 * **Alejandro Pereira** - Computer Science, Federal University of Pelotas - UFPel, Pelotas, Brazil.
 * **Marcelo Ribeiro** - Computer Science, Federal University of Pelotas - UFPel, Pelotas, Brazil.
+
+### Acknowledgements
+* https://github.com/facebookresearch/detectron2
+* https://github.com/brunobelloni/binary-to-coco-json-converter
+* Coordenação de Aperfeiçoamento de Pessoal de Nível Superior - Brasil (CAPES)
+* Programa Institucional de Bolsas de Iniciação Científica - PROBIC/FAPERGS
