@@ -16,6 +16,11 @@ git clone https://github.com/marcelosdias/Fundus-Lesions-Instance-Segmentation.g
 
 cd Fundus-Lesions-Instance-Segmentation/
 ```
+
+- [Download the proposed work trained with ddr](https://github.com/marcelosdias/Fundus-Lesions-Instance-Segmentation/releases/download/proposed-work-ddr/ddr.zip)
+
+- [Download the proposed work trained with idrid](https://github.com/marcelosdias/Fundus-Lesions-Instance-Segmentation/releases/download/proposed-work-idrid/idrid.zip)
+
 Anaconda installation:
 https://www.anaconda.com/products/distribution/start-coding-immediately
 
