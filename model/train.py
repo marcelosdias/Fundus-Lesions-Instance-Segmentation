@@ -6,6 +6,8 @@ from Trainer import Trainer
 import os
 import pickle
 
+from esTrainer import run_trainer
+
 (
   train_dataset_name,
   train_images_path, 
@@ -19,7 +21,8 @@ import pickle
   device, 
   cfg_save_path, 
   output_dir,
-  epochs
+  epochs,
+  selected_mode
 ) =  initial_training_config()
 
 dataset_train_length = get_train_dataset_length(train_images_path)
@@ -65,8 +68,12 @@ with open (cfg_save_path, 'wb') as f:
 
 os.makedirs(cfg.OUTPUT_DIR, exist_ok=True)
 
-trainer = Trainer(cfg)
+if selected_mode == 'es':
+  run_trainer(cfg)
 
-trainer.resume_or_load(resume=False)
+else:
+  trainer = Trainer(cfg)
 
-trainer.train()
+  trainer.resume_or_load(resume=False)
+
+  trainer.train()

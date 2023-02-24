@@ -90,6 +90,7 @@ def initial_training_config():
     output_dir = './output'
 
     parser = argparse.ArgumentParser()
+    parser.add_argument('--mode')
 
     parser.add_argument('--dataset')
 
@@ -101,6 +102,9 @@ def initial_training_config():
 
     valid_dataset_name, valid_images_path, valid_json_annotations_path = get_dataset_config(args.dataset, 'valid')
 
+    if args.mode != 'es' and args.mode != 'vl':
+        raise Exception("Invalid Mode")
+    
     return (
         train_dataset_name,
         train_images_path, 
@@ -114,7 +118,8 @@ def initial_training_config():
         device, 
         cfg_save_path, 
         output_dir, 
-        args.epochs
+        int(args.epochs),
+        args.mode
     )
 
 def initial_test_config():
@@ -202,4 +207,4 @@ def get_train_dataset_length(dataset_path):
         if os.path.isfile(os.path.join(dataset_path, path)):
             length += 1
 
-    return length - 1
+    return length
