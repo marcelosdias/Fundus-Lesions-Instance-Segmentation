@@ -29,7 +29,7 @@ dataset_train_length = get_train_dataset_length(train_images_path)
 
 config_hyperparameters = create_hyperparameter(
   epochs=epochs, 
-  batch_size=1, 
+  batch_size=2, 
   learning_rate=0.0001, 
   momentum=0.937, 
   weight_decay=0.0005, 
@@ -70,7 +70,7 @@ os.makedirs(cfg.OUTPUT_DIR, exist_ok=True)
 
 if selected_mode == 'es':
   run_trainer(cfg)
-  
+
 else:
   trainer = Trainer(cfg)
 

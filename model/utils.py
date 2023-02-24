@@ -207,4 +207,4 @@ def get_train_dataset_length(dataset_path):
         if os.path.isfile(os.path.join(dataset_path, path)):
             length += 1
 
-    return length - 1
+    return length
