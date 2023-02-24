@@ -51,9 +51,12 @@ python main_coco.py
 cd ../..
 ```
 ### Training
+Modes:
+* es (Early Stopping): By default stop after 100 epochs
+* vl (Validation loss): Generate validation loss during the training
 ```
 cd model/
-python train.py --dataset ddr/idrid --epochs xx
+python train.py --mode es/vl --dataset ddr/idrid --epochs xx
 cd ..
 ```
 ### Testing
